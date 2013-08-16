@@ -1,67 +1,67 @@
-describe( "toNumber always givs a number or fallback 0", function () {  
-    it("integer", function () {  
+describe("toNumber function", function () {  
+    it("return given int", function () {  
         expect(toNumber(10)).toEqual(10);  
     });  
-    it("string with a number", function () {  
+    it("changes string with a number to a int", function () {  
         expect(toNumber("10")).toEqual(10);  
     });  
-    it("negative value", function () {  
+    it("return given int negative value form a string", function () {  
         expect(toNumber("-10")).toEqual(-10);  
     });  
-    it("string with a word", function () {  
+    it("returns 0 for string", function () {  
         expect(toNumber("foo")).toEqual(0);  
     });
-    it("string with a fallback", function () {  
+    it("returns fallback when the first parameters is a string", function () {  
         expect(toNumber("foo", 1)).toEqual(1);  
     });  
 }); 
 
 
-describe( "translate returns translate3d", function () {  
-    it("integers", function () {  
+describe("translate function", function () {  
+    it("returns CSS value for from given ints", function () {  
         expect(translate({ x: 100, y: 50, z: -200 })).toEqual(" translate3d(100px,50px,-200px) ");  
     });  
 
-     it("strings", function () {  
+     it("returns CSS value for from given strings", function () {  
         expect(translate({ x: "100", y: "50",z: "-200" })).toEqual(" translate3d(100px,50px,-200px) ");  
     });   
 }); 
 
 
-describe( "rotate returns ", function () {  
-    it("integers", function () {  
-        expect(translate({ x: 100, y: 50, z: -200 })).toEqual(" translate3d(100px,50px,-200px) ");  
+describe("rotate function ", function () {  
+    it("returns CSS value for from given ints", function () {  
+        expect(rotate(30)).toEqual(" rotate(30deg) ");  
     });  
 
-     it("strings", function () {  
-        expect(translate({ x: "100", y: "50",z: "-200" })).toEqual(" translate3d(100px,50px,-200px) ");  
+     it("returns CSS value for from given string", function () {  
+        expect(rotate("30")).toEqual(" rotate(30deg)  ");  
     });   
 }); 
 
 
-describe( "rotate returns scale ", function () {  
-    it("integers", function () {  
+describe( "scale function", function () {  
+    it("returns CSS value for from given ints", function () {  
         expect(scale(2)).toEqual(" scale(2) ");  
     });  
 
-     it("strings", function () {  
+     it("returns CSS value for from given string", function () {  
         expect(scale("2")).toEqual(" scale(2) ");  
     }); 
-    it("negative value", function () {  
+    it("returns CSS value for from nagative ints", function () {  
         expect(scale(-2)).toEqual(" scale(-2) ");  
     });   
 });
  
 
-describe( "rotate returns perspective with px", function () {  
-    it("integers", function () {  
+describe( "rotate function", function () {  
+    it("returns CSS value for from given ints", function () {  
         expect(perspective(1000)).toEqual(" perspective(1000px) ");  
     });  
 
-     it("strings", function () {  
+     it("returns CSS value for from given string", function () {  
         expect(perspective("2000")).toEqual(" perspective(2000px) ");  
     }); 
-    it("negative value", function () {  
+    it("returns CSS value for from nagative ints", function () {  
         expect(perspective(-1000)).toEqual(" perspective(-1000px) ");  
     });  
 
