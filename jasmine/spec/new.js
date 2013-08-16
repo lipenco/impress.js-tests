@@ -30,11 +30,11 @@ describe("translate function", function () {
 
 describe("rotate function ", function () {  
     it("returns CSS value for from given ints", function () {  
-        expect(rotate(30)).toEqual(" rotate(30deg) ");  
+        expect(rotate({ x: 100, y: 50, z: -200 })).toEqual(" rotateX(100deg)  rotateY(50deg)  rotateZ(-200deg) ");  
     });  
 
      it("returns CSS value for from given string", function () {  
-        expect(rotate("30")).toEqual(" rotate(30deg)  ");  
+        expect(rotate({ x: "100", y: "50", z: "-200" })).toEqual(" rotateX(100deg)  rotateY(50deg)  rotateZ(-200deg) ");  
     });   
 }); 
 
@@ -53,7 +53,7 @@ describe( "scale function", function () {
 });
  
 
-describe( "rotate function", function () {  
+describe( "perspective function", function () {  
     it("returns CSS value for from given ints", function () {  
         expect(perspective(1000)).toEqual(" perspective(1000px) ");  
     });  
