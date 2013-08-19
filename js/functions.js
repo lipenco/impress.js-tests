@@ -15,12 +15,12 @@
     
     // `scale` builds a scale transform string for given data.
     var scale = function ( s ) {
-        return " scale(" + s + ") ";
+        return isNaN(s) ? " scale(" + 1 + ") " : " scale(" + s + ") ";
     };
     
     // `perspective` builds a perspective transform string for given data.
     var perspective = function ( p ) {
-        return " perspective(" + p + "px) ";
+        return isNaN(p) ? " perspective(" + 1000 + "px) " : " perspective(" + p + "px) ";
     };
 
     var toNumber = function (numeric, fallback) {

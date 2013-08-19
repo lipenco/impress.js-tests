@@ -25,14 +25,14 @@
     test("scale basics", function() {
        equal(scale(2), " scale(2) ");
        equal(scale(-2), " scale(-2) ");
-       equal(scale("foo"), " scale(0) ");
+       equal(scale("foo"), " scale(1) ");
     });
 
     test("perspective basics", function() {
       equal(perspective(1000), " perspective(1000px) ");
       equal(perspective(-1000), " perspective(-1000px) ");
       equal(perspective("1000"), " perspective(1000px) ");
-      equal(perspective("foo"), " perspective(0px) ");
+      equal(perspective("foo"), " perspective(1000px) ");
     });
 
     test("toNumber basics", function() {
